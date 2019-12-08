@@ -1,6 +1,6 @@
-# Conveyor Belt - C implementation of this synchronization problem. 
+## Conveyor Belt - C implementation of this synchronization problem. 
 
-## This program is an illustation of the following assembly line/conveyor belt setup:
+### This program is an illustation of the following assembly line/conveyor belt setup:
 
 * The Converyor belt has 3 slots.
 
@@ -48,7 +48,7 @@
 ```
 
 * When the belt starts rolling, part A and part B of product P starts appearing on the slot 0.
-** Note: slot 0 can start with part A, part B or can be empty E with equal probability
+    * Note: slot 0 can start with part A, part B or can be empty E with equal probability
 
 ```
         run 1                   run 2                   run 3                   run 4
@@ -65,8 +65,8 @@
 ```
 
 * Worker, W<sub>i</sub>, can take the part A on slot S<sub>i/2</sub> if:
-** W<sub>i</sub> is holding part B 
-** W<sub>i</sub> is holding onto nothing, E, and it's counterpart, W<sub>i-1</sub>, (__if *i* in W<sub>i</sub> is odd__), or W<sub>i+1</sub>, (__if *i* in W<sub>i</sub> is even__) has no use for it (i.e. if the counterpart is holding onto nothing, E, or is already holding onto part A, or is holding onto product P, or is busy assembling product P from part A and part B which it already has)
+    * W<sub>i</sub> is holding part B 
+    * W<sub>i</sub> is holding onto nothing, E, and it's counterpart, W<sub>i-1</sub>, (_if *i* in W<sub>i</sub> is odd_), or W<sub>i+1</sub>, (_if *i* in W<sub>i</sub> is even_) has no use for it (i.e. if the counterpart is holding onto nothing, E, or is already holding onto part A, or is holding onto product P, or is busy assembling product P from part A and part B which it already has)
 
 ```
                               |          run 1             |          run 1             |          run 2             |          run 2
@@ -83,7 +83,7 @@
 ```
 
 * Once Worker, W<sub>i</sub> has both part A and part B in hand, it takes 3 runs or slots to roll by before it can finish assembling product P from those.
-** Note: The finished product is placed onto the 1st empty slot after 3 runs have gone by.
+    * Note: The finished product is placed onto the 1st empty slot after 3 runs have gone by.
 
 ```
                                |         run 1              |         run 1              |         run 2              |         run 2
@@ -126,6 +126,6 @@
 ```
 
 * Given this illustration:
-** design a conveyor belt, worker system
-** run it for a 100 times
-** output the number of finished products that come off the line, the number of part A and part B wasted.
+    * design a conveyor belt, worker system
+    * run it for a 100 times
+    * output the number of finished products that come off the line, the number of part A and part B wasted.
